@@ -34,7 +34,12 @@
     },
     methods: {
       finalizarTarefa(tempoDecorrido: number) : void {
-        this.$emit('aoSalvarTarefa', { duracaoEmSegundos: tempoDecorrido, descricao: this.descricao })
+        this.$emit('aoSalvarTarefa', 
+          { 
+            duracaoEmSegundos: tempoDecorrido, 
+            descricao: this.descricao 
+          }
+        )
         this.descricao = '';
       }
     }
