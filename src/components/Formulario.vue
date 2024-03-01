@@ -23,6 +23,7 @@
 
   export default defineComponent({
     name: 'FormularioComponent',
+    emits: ['aoSalvarTarefa'],
     components: {
       Temporizador
     },
@@ -33,8 +34,7 @@
     },
     methods: {
       finalizarTarefa(tempoDecorrido: number) : void {
-        console.log('tempo da tarefa ', tempoDecorrido);
-        console.log('descrição da tarefa ', this.descricao);
+        this.$emit('aoSalvarTarefa', { duracaoEmSegundos: tempoDecorrido, descricao: this.descricao })
         this.descricao = '';
       }
     }
